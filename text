@@ -1,0 +1,16 @@
+ <div class="contact-form"> <h1>Contact Us</h1>
+      <form action="action_page.php" id="contact-form">
+        <label for="name"></label>
+        <input type ="text" id="fullname" name="firstname" placeholder="Name.." required>
+
+       <div class="align"> <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+        <label for="phone"></label>
+        <input type="tel" id="phone" name="tel" placeholder="Your Phone Number.." >
+</div>
+        <label for="message"></label>
+        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+        <input type="submit" value="Submit">
+      </form>
+      </div>

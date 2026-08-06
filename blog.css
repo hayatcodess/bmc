@@ -1,0 +1,267 @@
+/* ==========================================================================
+   1. Base & Global Styles
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #fff;
+    color: #333;
+    padding: 0;
+}
+
+/* ==========================================================================
+   2. Navigation Bar
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between; /* Logo on left, links on right */
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft baseline border shadow */
+}
+
+.logo a {
+    text-decoration: none;
+    color: #2a369e;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px; 
+    font-size: 16px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1a5cb3;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #2a369e;
+}
+
+.info {
+    color: #1d4bc0;
+    margin: 0;
+    font-weight: 400;
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+/* ==========================================================================
+   3. Live Video Stream Section
+   ========================================================================== */
+.article {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.live-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.live-header h2 {
+    color: #2a369e;
+    font-size: 22px;
+}
+
+/* Live Badge Setup */
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    animation: livePulse 1.8s infinite ease-in-out;
+}
+
+@keyframes livePulse {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    100% {
+        width: 250%;
+        height: 250%;
+        opacity: 0;
+    }
+}
+
+/* Widescreen Video Player Canvas Container */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Perfect 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================================
+   4. Published Articles Grid Layout
+   ========================================================================== */
+.articles {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px; 
+}
+
+.card { 
+    background: #fdfdfd;
+    border: 1px solid #e1e4e8; 
+    padding: 25px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+    color: #2a369e;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Card CTA Action Buttons */
+.card button {
+    background-color: #1a5cb3;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.card button:hover {
+    background-color: #2a369e;
+}
+
+/* ==========================================================================
+   5. Interactive Popup Modals
+   ========================================================================== */
+.popup-overlay {
+    display: none; /* Controlled dynamically via JavaScript */
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(4px); /* Modern frosted-glass backdrop decoration */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Activated popup grid display engine override */
+.popup-overlay[style*="display: block"] {
+    display: flex !important;
+}
+
+.popup-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 520px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.popup-content h2 {
+    color: #2a369e;
+    margin-bottom: 12px;
+}
+
+.popup-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; 
+    right: 20px;
+    font-size: 32px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #ff0000;
+}

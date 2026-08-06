@@ -5,14 +5,39 @@ const teamMembers = [
     {
         name: "Dr. Harris",
         role: "CEO & Founder",
-        image: "https://unsplash.com",
+        image: "https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg",
         caption: "Dr. Harris is the founder of BMC. He spent his early career years researching and innovating bio-medical technologies."
     },
+     {
+        name: "Dr. Ajay Dhakal",
+        role: " Lab Advisor",
+        image: "https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg",
+        caption: "Dr. Ajay Dhakal is an oncologist with extensive experience in medicine and interests in cancer research."
+    },
+    
     {
-        name: "Jane Smith",
-        role: "Lead Developer",
-        image: "https://unsplash.com",
-        caption: "Jane heads our system infrastructure architecture, converting intricate algorithms into practical software modules."
+        name: "Samantha Magowo",
+        role: "Lab Member",
+        image: "https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg",
+        caption: "Samantha is a dedicated lab member with extensive experience in biomedical research."
+    },
+     {
+        name: "Jeffrey Bartley",
+        role: " Bioengineer",
+        image: "https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg",
+        caption: "Jeffrey is a skilled bioengineer with a passion for developing innovative solutions in biomedical research."
+    },
+     {
+        name: "Justin M. Lipschutz",
+        role: "Bioengineer",
+        image: "https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg",
+        caption: "Justin is a skilled bioengineer with a passion for developing innovative solutions in biomedical research."
+    },
+     {
+        name: "Zuhayr Baig",
+        role: "Bioengineer",
+        image: "https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg",
+        caption: "Zuhayr is a talented bioengineer with a strong background in developing cutting-edge medical devices."
     }
 ];
 

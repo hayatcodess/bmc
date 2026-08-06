@@ -5,12 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Blog - BMC INC.</title> 
     <link rel="stylesheet" href="blog.css"> 
+    <style>
+        body {
+            background: linear-gradient(180deg, #f5f7fa 0%, #e8eef7 100%);
+        }
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 18px rgba(20, 40, 80, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        .live-badge {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: #fff;
+        }
+        .video-container iframe {
+            background: linear-gradient(135deg, #f2f8ff, #dfeaff);
+        }
+        .card {
+            background: linear-gradient(180deg, #ffffff, #f4f8ff);
+        }
+        .popup-content {
+            background: linear-gradient(180deg, #ffffff, #eef4fb);
+        }
+
+        a{
+            color:white;
+            text-decoration: none;
+        }
+    </style>
 </head> 
 <body>  
     <nav> 
         <!-- Logo stays on the left --> 
         <div class="logo"> 
-            <a href="home.html">Logo</a> 
+            <a href="home.html">BMC Inc.</a> 
         </div>  
         <!-- Links and info are grouped and pushed to the right --> 
         <ul class="nav-links"> 
@@ -48,12 +76,16 @@
         <div id="articles-container" class="page"> 
             <div class="grid"> 
                 <div class="card"> 
-                    <h3>Tech Trends</h3> 
+                    <h3>Article 1 by Jane doe</h3> 
                     <button onclick="openArticle('article1')">Read Article</button> 
                 </div>  
                 <div class="card"> 
-                    <h3>Health Tips</h3> 
+                    <h3>Article 2 by Jane Doe</h3> 
                     <button onclick="openArticle('article2')">Read Article</button> 
+                </div> 
+                <div class="card"> 
+                    <h3>Dissection Live </h3> 
+                    <button><a href="www.youtube.com">Watch Live</a></button> 
                 </div> 
             </div>  
             
@@ -62,8 +94,9 @@
             <div id="article1" class="popup-overlay" onclick="closePopup(event, 'article1')"> 
                 <div class="popup-content"> 
                     <span class="close-btn" onclick="document.getElementById('article1').style.display='none'">&times;</span> 
-                    <h2>Future of AI</h2> 
-                    <p>Artificial Intelligence is shaping our software ecosystem dramatically in 2026...</p> 
+                    <h2>Article One</h2> 
+                    <img src="https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg" width="80%" height="auto" alt="Tech Trends" />
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum..<br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.<br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p> 
                 </div> 
             </div>  
             
@@ -71,8 +104,9 @@
             <div id="article2" class="popup-overlay" onclick="closePopup(event, 'article2')"> 
                 <div class="popup-content"> 
                     <span class="close-btn" onclick="document.getElementById('article2').style.display='none'">&times;</span> 
-                    <h2>Daily Habits</h2> 
-                    <p>Drinking enough water and walking 10,000 steps daily improves cognition...</p> 
+                    <h2>Article Two</h2> 
+                    <img src="https://i.pinimg.com/1200x/6e/59/95/6e599501252c23bcf02658617b29c894.jpg" width="80%" height="auto" alt="Health Tips" />
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining ess...</p> 
                 </div> 
             </div>  
         </div> 

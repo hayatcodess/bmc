@@ -162,8 +162,8 @@ nav {
 
 .grid { 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; 
 }
 
 .card { 
@@ -173,6 +173,7 @@ nav {
     border-radius: 8px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.02);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 100%;
 }
 
 .card:hover {
@@ -227,10 +228,12 @@ nav {
 
 .popup-content {
     background: white;
-    padding: 40px;
+    padding: 30px 40px;
     border-radius: 12px;
-    max-width: 520px;
-    width: 90%;
+    width: min(90%, 640px);
+    max-width: 640px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: modalSlide 0.3s ease-out;
@@ -255,13 +258,45 @@ nav {
     position: absolute;
     top: 15px; 
     right: 20px;
-    font-size: 32px;
-    color: #aaa;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #555;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease;
+    z-index: 2;
     line-height: 1;
 }
 
 .close-btn:hover {
     color: #ff0000;
+    background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 640px) {
+    nav {
+        padding: 20px;
+    }
+    .article,
+    .articles {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .card {
+        padding: 18px;
+    }
+    .popup-content {
+        padding: 24px 20px;
+    }
+    .close-btn {
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+    }
 }
